@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><style>img { max-width: 200px; max-height: 200px; margin: 10px; border: 1px solid red; }</style></head>
+<body>
+    <div id="images"></div>
+    <script>
+        const names = [
+            "image copy 10.png", "image copy 11.png", "image copy 12.png", "image copy 13.png", 
+            "image copy 14.png", "image copy 15.png", "image copy 16.png", "image copy 17.png", 
+            "image copy 18.png", "image copy 19.png", "image copy 2.png", "image copy 3.png", 
+            "image copy 4.png", "image copy 5.png", "image copy 6.png", "image copy 7.png", 
+            "image copy 8.png", "image copy 9.png", "image copy.png", "image.png"
+        ];
+        const container = document.getElementById('images');
+        names.forEach(name => {
+            const wrapper = document.createElement('div');
+            wrapper.style.display = 'inline-block';
+            wrapper.style.textAlign = 'center';
+            const img = document.createElement('img');
+            img.src = '/images/' + encodeURIComponent(name);
+            const label = document.createElement('p');
+            label.textContent = name;
+            wrapper.appendChild(img);
+            wrapper.appendChild(label);
+            container.appendChild(wrapper);
+        });
+    </script>
+</body>
+</html>
